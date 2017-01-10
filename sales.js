@@ -193,6 +193,7 @@ function displayStore(store) {
   var currentTimeMode;
   for (var index = 0; index < store.totalHours; index++) {
     var listEl = document.createElement('li');
+    listEl.setAttribute('class', 'dataClass');
     if (index < 6 ) {
       currentTimeMode = timeModes[0];
     } else {
