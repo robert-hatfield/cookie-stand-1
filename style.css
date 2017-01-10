@@ -5,7 +5,29 @@ h1 {
 }
 
 .dataClass {
-  font-family: Arial, Verdana, Helvetica
+  font-family: Arial, Verdana, Helvetica;
+}
+
+p {
+  font-family:  Georgia, Times, Helvetica;
+}
+
+.mainBody {
+    background-image: url("salmon.png");
+    background-repeat: repeat-x;
+}
+
+.mainP {
+  font-size: 2.5em;
+  float: left;
+}
+
+.adAre {
+  float: right;
+}
+
+bottomLinks {
+
 }
 /*
 A custom Google font for highlights
