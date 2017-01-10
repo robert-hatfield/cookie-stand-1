@@ -5,7 +5,7 @@ var FirstAndPike = {
   minCustomer: 23,
   // maximum customer per hour for the day
   maxCustomer: 65,
-  // contains the average of purchased cookies per hour
+  // contains  the average of purchased cookies per hour
   averageCookiesPerCustomer: 6.3,
   // set total hour for store
   totalHours: 15,
