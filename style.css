@@ -45,6 +45,7 @@ img {
   margin: auto;
   width: 40%;
   height: 40%;
+
 }
 
 a:link, a:visited {
@@ -64,21 +65,9 @@ a:link, a:visited {
   font-family: Arial, Verdana, Helvetica;
 }
 
-.cookie-table {
-  border-style: double;
-}
-
-th {
-  border-style: solid;
-  font-family: sans-serif;
-  font-size: 110%;
-  color: green;
-}
-
-tr td {
-  font-size: 130%;
-  font-family: Helvetica;
-  color: Blue;
+main {
+  background-color: blue;
+  width 300px;
 }
 
 /*
