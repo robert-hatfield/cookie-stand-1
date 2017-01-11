@@ -26,6 +26,17 @@ p {
   float: right;
 }
 
+.cookie-table {
+  border-style: double;
+}
+
+th {
+  border-style: solid;
+  font-family: sans-serif;
+  font-size: 150%;
+  width: 3em;
+}
+
 bottomLinks {
 
 }
