@@ -26,27 +26,27 @@ StoreConstruct.prototype.randomCustomerPerHour = function() {
   };
 };
 
-// function to call to display daily quantities for store parameter
-function displayStore(store) {
+// function method to call to display daily quantities for store
+StoreConstruct.prototype.render = function() {
   // Show row title in the first element of the row
-  var myList = document.getElementById(store.IDstring);
+  var myList = document.getElementById(this.IDstring);
   var listEl = document.createElement('td');
-  listEl.textContent = (store.IDstring);
+  listEl.textContent = (this.IDstring);
   myList.appendChild(listEl);
   // append cookiesPurchasedPerHour for eash row data element
   // also keep track of column totals while we're at it.
-  for (var index = 0; index < store.totalHours; index++) {
+  for (var index = 0; index < this.totalHours; index++) {
     var listEl = document.createElement('td');
-    listEl.textContent = store.cookiesPurchasedPerHour[index];
+    listEl.textContent = this.cookiesPurchasedPerHour[index];
     myList.appendChild(listEl);
-    columnTotals[index] += store.cookiesPurchasedPerHour[index];
+    columnTotals[index] += this.cookiesPurchasedPerHour[index];
   };
   // create last column to show total cookies for the day
   var listEl = document.createElement('td');
-  listEl.textContent = store.cookieTotal;
+  listEl.textContent = this.cookieTotal;
   myList.appendChild(listEl);
-  columnTotals[15] += store.cookieTotal; // add store total to last row column value
-}
+  columnTotals[15] += this.cookieTotal; // add store total to last row column value
+};
 
 // Stretch goal
 function displayColumnTotals() {
@@ -97,7 +97,7 @@ for (var i =  0; i < storeList.length; i++) {
 
 // display initial data
 for (var i =  0; i < storeList.length; i++) {
-  displayStore(storeList[i]);
+  storeList[i].render();
 };
 displayColumnTotals();
 
@@ -108,7 +108,7 @@ document.getElementById('button').onclick = function() {
   for (var i =  0; i < storeList.length; i++) {
     clearListDisplay(storeList[i]);
     storeList[i].randomCustomerPerHour();
-    displayStore(storeList[i]);
+    storeList[i].render();
   };
   displayColumnTotals();
 };
