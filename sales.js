@@ -30,26 +30,16 @@ StoreConstruct.prototype.randomCustomerPerHour = function() {
 function displayStore(store) {
   // Initialize current store variables by calling their methods.
   var myList = document.getElementById(store.IDstring);
-  var timeModes = ['AM', 'PM'];
-  var currentTimeMode;
+  var listEl = document.createElement('td');
+  listEl.textContent = (store.IDstring);
+  myList.appendChild(listEl);
   for (var index = 0; index < store.totalHours; index++) {
-    var listEl = document.createElement('li');
-    listEl.setAttribute('class', 'dataClass');
-    listEl.setAttribute('font-family', 'Arial, Verdana, Helvetica');
-    if (index < 6 ) {
-      currentTimeMode = timeModes[0];
-    } else {
-      currentTimeMode = timeModes[1];
-    };
-    if (index != 6) {
-      listEl.textContent = ((index + 6) % 12) + currentTimeMode + ': ' + store.cookiesPurchasedPerHour[index] + ' cookies';
-    } else {
-      listEl.textContent = '12' + currentTimeMode + ': ' + store.cookiesPurchasedPerHour[index] + ' cookies';
-    };
+    var listEl = document.createElement('td');
+    listEl.textContent = store.cookiesPurchasedPerHour[index];
     myList.appendChild(listEl);
   };
-  var listEl = document.createElement('li');
-  listEl.textContent = 'Total: ' + store.cookieTotal + ' cookies';
+  var listEl = document.createElement('td');
+  listEl.textContent = 'Total: ';
   myList.appendChild(listEl);
 }
 
