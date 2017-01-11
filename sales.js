@@ -1,197 +1,30 @@
 'use strict';
 
-var FirstAndPike = {
+function StoreConstruct(minCustomer, maxCustomer, averageCookiesPerCustomer, totalHours, IDstring) {
   // minimum customer per hour for the day
-  minCustomer: 23,
+  this.minCustomer = minCustomer;
   // maximum customer per hour for the day
-  maxCustomer: 65,
+  this.maxCustomer = maxCustomer;
   // contains the average of purchased cookies per hour
-  averageCookiesPerCustomer: 6.3,
+  this.averageCookiesPerCustomer = averageCookiesPerCustomer;
   // set total hour for store
-  totalHours: 15,
+  this.totalHours = totalHours;
   // ID string assigned to be used by external for loop
-  IDstring: 'FirstAndPike',
-  // this would contain customer per hour for 15 hours.
-  custPerHour: [],
-  // cookies purchased per hour
-  cookiesPurchasedPerHour: [],
-  // contains the total number of customer
-  totalCustomer: 0,
-  // total cookies sold
-  cookieTotal: 0,
+  this.IDstring = IDstring;
+};
   // all the methods below are for calculating random customer and cookies per customer.
   // calculate random customer per hour, and also add total cookies.
-  randomCustomerPerHour: function() {
-    this.cookieTotal = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
-      this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
-      this.cookieTotal += this.cookiesPurchasedPerHour[index];
-    };
-  },
-  // find total customer for the day
-  findTotalCustomer: function() {
-    this.totalCustomer = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.totalCustomer += this.custPerHour[index];
-    };
-  }
+StoreConstruct.prototype.randomCustomerPerHour = function() {
+  this.cookieTotal = 0;
+  this.totalCustomer = 0;
+  this.custPerHour = [];
+  this.cookiesPurchasedPerHour = [];
+  for (var i = 0; i < this.totalHours; i++ ) {
+    this.custPerHour[i] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer)) + (this.minCustomer + 1);
+    this.cookiesPurchasedPerHour[i] = Math.round(this.custPerHour[i] * this.averageCookiesPerCustomer);
+    this.cookieTotal += this.cookiesPurchasedPerHour[i];
+  };
 };
-
-var Seatac = {
-  // minimum customer per hour for the day
-  minCustomer: 3,
-  // maximum customer per hour for the day
-  maxCustomer: 24,
-  // contains the average of purchased cookies per hour
-  averageCookiesPerCustomer: 1.2,
-  // set total hour for store
-  totalHours: 15,
-  // ID string assigned to be used by external for loop
-  IDstring: 'Seatac',
-  // this would contain customer per hour for 15 hours.
-  custPerHour: [],
-  // cookies purchased per hour
-  cookiesPurchasedPerHour: [],
-  // contains the total number of customer
-  totalCustomer: 0,
-  // total cookies sold
-  cookieTotal: 0,
-  // all the methods below are for calculating random customer and cookies per customer.
-  // calculate random customer per hour, and also add total cookies.
-  randomCustomerPerHour: function() {
-    this.cookieTotal = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
-      this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
-      this.cookieTotal += this.cookiesPurchasedPerHour[index];
-    };
-  },
-  // find total customer for the day
-  findTotalCustomer: function() {
-    this.totalCustomer = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.totalCustomer += this.custPerHour[index];
-    };
-  },
-};
-
-var SeattleCenter = {
-  // minimum customer per hour for the day
-  minCustomer: 11,
-  // maximum customer per hour for the day
-  maxCustomer: 38,
-  // contains the average of purchased cookies per hour
-  averageCookiesPerCustomer: 3.7,
-  // set total hour for store
-  totalHours: 15,
-  // ID string assigned to be used by external for loop
-  IDstring: 'SeattleCenter',
-  // this would contain customer per hour for 15 hours.
-  custPerHour: [],
-  // cookies purchased per hour
-  cookiesPurchasedPerHour: [],
-  // contains the total number of customer
-  totalCustomer: 0,
-  // total cookies sold
-  cookieTotal: 0,
-  // all the methods below are for calculating random customer and cookies per customer.
-  // calculate random customer per hour, and also add total cookies.
-  randomCustomerPerHour: function() {
-    this.cookieTotal = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
-      this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
-      this.cookieTotal += this.cookiesPurchasedPerHour[index];
-    };
-  },
-  // find total customer for the day
-  findTotalCustomer: function() {
-    this.totalCustomer = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.totalCustomer += this.custPerHour[index];
-    };
-  },
-};
-
-var Capitol = {
-  // minimum customer per hour for the day
-  minCustomer: 20,
-  // maximum customer per hour for the day
-  maxCustomer: 38,
-  // contains the average of purchased cookies per hour
-  averageCookiesPerCustomer: 2.3,
-  // set total hour for store
-  totalHours: 15,
-  // ID string assigned to be used by external for loop
-  IDstring: 'Capitol',
-  // this would contain customer per hour for 15 hours.
-  custPerHour: [],
-  // cookies purchased per hour
-  cookiesPurchasedPerHour: [],
-  // contains the total number of customer
-  totalCustomer: 0,
-  // total cookies sold
-  cookieTotal: 0,
-  // all the methods below are for calculating random customer and cookies per customer.
-  // calculate random customer per hour, and also add total cookies.
-  randomCustomerPerHour: function() {
-    this.cookieTotal = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
-      this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
-      this.cookieTotal += this.cookiesPurchasedPerHour[index];
-    };
-  },
-  // find total customer for the day
-  findTotalCustomer: function() {
-    this.totalCustomer = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.totalCustomer += this.custPerHour[index];
-    };
-  }
-};
-
-var Alki = {
-  // minimum customer per hour for the day
-  minCustomer: 2,
-  // maximum customer per hour for the day
-  maxCustomer: 16,
-  // contains the average of purchased cookies per hour
-  averageCookiesPerCustomer: 4.6,
-  // set total hour for store
-  totalHours: 15,
-  // ID string assigned to be used by external for loop
-  IDstring: 'Alki',
-  // this would contain customer per hour for 15 hours.
-  custPerHour: [],
-  // cookies purchased per hour
-  cookiesPurchasedPerHour: [],
-  // contains the total number of customer
-  totalCustomer: 0,
-  // total cookies sold
-  cookieTotal: 0,
-  // all the methods below are for calculating random customer and cookies per customer.
-  // calculate random customer per hour, and also add total cookies.
-  randomCustomerPerHour: function() {
-    this.cookieTotal = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
-      this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
-      this.cookieTotal += this.cookiesPurchasedPerHour[index];
-    };
-  },
-  // find total customer for the day
-  findTotalCustomer: function() {
-    this.totalCustomer = 0;
-    for (var index = 0; index < this.totalHours; index++ ) {
-      this.totalCustomer += this.custPerHour[index];
-    };
-  }
-};
-
-// creates an array of object that includes all stores
-var storeList = [FirstAndPike, Seatac, SeattleCenter, Capitol, Alki];
 
 // function to call to display daily quantities for store parameter
 function displayStore(store) {
@@ -229,20 +62,28 @@ function clearListDisplay(store) {
 }
 
 // main body of program
-for (var index = 0; index < storeList.length; index++) {
-  storeList[index].randomCustomerPerHour();
-  storeList[index].findTotalCustomer();
-  displayStore(storeList[index]);
+var storeList = [FirstAndPike, Seatac, SeattleCenter, Capitol, Alki];
+// create an array that contain initial data (minCustomer, maxCustomer, averageCookiesPerCustomer)
+var initialData = [[23, 65, 6.3],[3, 24, 1.2],[11,38,3.7],[20,38,2.3],[2,16,4.6]];
+// create an array that contain the ID string that will be used to locate specific ID on html
+var stringAnchor = ['FirstAndPike', 'Seatac', 'SeattleCenter', 'Capitol', 'Alki'];
+// create the stores with initial data
+for (var i =  0; i < storeList.length; i++) {
+  storeList[i] = new StoreConstruct(initialData[i][0], initialData[i][1], initialData[i][2], 15, stringAnchor[i]);
+  storeList[i].randomCustomerPerHour();
+};
+
+// main program, display initial data
+for (var i =  0; i < storeList.length; i++) {
+  displayStore(storeList[i]);
 };
 
 // if button is clicked, random data will be produced for next day
 // and will update the window
 document.getElementById('button').onclick = function() {
-  for (var index = 0; index < storeList.length; index++) {
-    clearListDisplay(storeList[index]);
-    // initialize with random data
-    storeList[index].randomCustomerPerHour();
-    storeList[index].findTotalCustomer();
-    displayStore(storeList[index]);
+  for (var i =  0; i < storeList.length; i++) {
+    clearListDisplay(storeList[i]);
+    storeList[i].randomCustomerPerHour();
+    displayStore(storeList[i]);
   };
 };
