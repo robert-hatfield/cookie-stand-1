@@ -26,31 +26,33 @@ StoreConstruct.prototype.randomCustomerPerHour = function() {
   };
 };
 
+// Write the times header for the table
+function setupTableHeader() {
+  var hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'];
+  var tableEl = document.getElementById('cookie-table');
+  var rowEl = document.createElement('tr');
+  for (var i = 0; i < 15; i++) {
+    var rowData = document.createElement('th');
+    rowData.textContent = hours[i];
+    rowEl.appendChild(rowData);
+  };
+  tableEl.appendChild(dataEl);
+}
+
 // function to call to display daily quantities for store parameter
 function displayStore(store) {
-  // Initialize current store variables by calling their methods.
-  var myList = document.getElementById(store.IDstring);
-  var timeModes = ['AM', 'PM'];
-  var currentTimeMode;
-  for (var index = 0; index < store.totalHours; index++) {
-    var listEl = document.createElement('li');
-    listEl.setAttribute('class', 'dataClass');
-    listEl.setAttribute('font-family', 'Arial, Verdana, Helvetica');
-    if (index < 6 ) {
-      currentTimeMode = timeModes[0];
-    } else {
-      currentTimeMode = timeModes[1];
-    };
-    if (index != 6) {
-      listEl.textContent = ((index + 6) % 12) + currentTimeMode + ': ' + store.cookiesPurchasedPerHour[index] + ' cookies';
-    } else {
-      listEl.textContent = '12' + currentTimeMode + ': ' + store.cookiesPurchasedPerHour[index] + ' cookies';
-    };
-    myList.appendChild(listEl);
-  };
-  var listEl = document.createElement('li');
-  listEl.textContent = 'Total: ' + store.cookieTotal + ' cookies';
-  myList.appendChild(listEl);
+  var tableEl = document.getElementById('cookie-table');
+  for (var i = 0; i < store.length; i++) {
+    var rowData = tableData[i];
+    var rowEl = document.createElement('tr');
+    for (var j = 0; j < rowData.length; j++) {
+      var content = rowData[j];
+      var dataEl = document.createElement('td');
+      dataEl.textContent = content;
+      rowEl.appendChild(dataEl);
+    }
+    table.El.appendChild(rowEl);
+  }
 }
 
 // clears the display list for a specific store
@@ -74,16 +76,17 @@ for (var i =  0; i < storeList.length; i++) {
 };
 
 // main program, display initial data
+setupTableHeader();
 for (var i =  0; i < storeList.length; i++) {
-  displayStore(storeList[i]);
+  //displayStore(storeList[i]);
 };
 
 // if button is clicked, random data will be produced for next day
 // and will update the window
 document.getElementById('button').onclick = function() {
   for (var i =  0; i < storeList.length; i++) {
-    clearListDisplay(storeList[i]);
+    //clearListDisplay(storeList[i]);
     storeList[i].randomCustomerPerHour();
-    displayStore(storeList[i]);
+    //displayStore(storeList[i]);
   };
 };
