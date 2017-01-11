@@ -1,34 +1,74 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
 h1 {
-  font-family: Oswald, Arial;
-}
-
-.dataClass {
-  font-family: Arial, Verdana, Helvetica;
+  font-family: Oswald, Arial, Verdana;
+  color: orange;
+  clear: both;
+  text-align: right;
 }
 
 p {
   font-family:  Georgia, Times, Helvetica;
 }
 
-.mainBody {
-    background-image: url("salmon.png");
-    background-repeat: repeat-x;
+#backImg {
+  background:
+  radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+  radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+  #8a3;
+  background-size: 20px 20px;
 }
+
 
 .mainP {
   font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic;
   float: left;
 }
 
-.adAre {
+img {
+  width: 100%;
+}
+
+.salmonPic {
+  float: left;
+  width: 100px;
+  height 400px;
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  margin-left: -30%;
+}
+
+.adArea {
   float: right;
+  margin: auto;
+  width: 40%;
+  height: 40%;
 }
 
-bottomLinks {
-
+a:link, a:visited {
+  color: yellow;
 }
+
+.bottomLinks {
+  background-image: url('bricks.jpg');
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  margin-left: -5px;
+}
+
+.dataClass {
+  font-family: Arial, Verdana, Helvetica;
+}
+
+main {
+  background-color: blue;
+  width 300px;
+}
+
 /*
 A custom Google font for highlights
 A specified standard san-serif web font for data (such as Arial, Verdana, or Helvetica)

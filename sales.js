@@ -5,7 +5,7 @@ var FirstAndPike = {
   minCustomer: 23,
   // maximum customer per hour for the day
   maxCustomer: 65,
-  // contains the average of purchased cookies per hour
+  // contains  the average of purchased cookies per hour
   averageCookiesPerCustomer: 6.3,
   // set total hour for store
   totalHours: 15,
@@ -24,7 +24,7 @@ var FirstAndPike = {
   randomCustomerPerHour: function() {
     this.cookieTotal = 0;
     for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
+      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + (this.minCustomer + 1));
       this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
       this.cookieTotal += this.cookiesPurchasedPerHour[index];
     };
@@ -62,7 +62,7 @@ var Seatac = {
   randomCustomerPerHour: function() {
     this.cookieTotal = 0;
     for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
+      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + (this.minCustomer + 1));
       this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
       this.cookieTotal += this.cookiesPurchasedPerHour[index];
     };
@@ -100,7 +100,7 @@ var SeattleCenter = {
   randomCustomerPerHour: function() {
     this.cookieTotal = 0;
     for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
+      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + (this.minCustomer + 1));
       this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
       this.cookieTotal += this.cookiesPurchasedPerHour[index];
     };
@@ -138,7 +138,7 @@ var Capitol = {
   randomCustomerPerHour: function() {
     this.cookieTotal = 0;
     for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
+      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + (this.minCustomer + 1));
       this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
       this.cookieTotal += this.cookiesPurchasedPerHour[index];
     };
@@ -176,7 +176,7 @@ var Alki = {
   randomCustomerPerHour: function() {
     this.cookieTotal = 0;
     for (var index = 0; index < this.totalHours; index++ ) {
-      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + 1);
+      this.custPerHour[index] = Math.round(Math.random() * (this.maxCustomer - this.minCustomer) + (this.minCustomer + 1));
       this.cookiesPurchasedPerHour[index] = Math.round(this.custPerHour[index] * this.averageCookiesPerCustomer);
       this.cookieTotal += this.cookiesPurchasedPerHour[index];
     };
