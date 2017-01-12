@@ -37,7 +37,31 @@
       <tr id="Alki" class="storeNames"></tr>
       <tr id="SumVertical" class="storeNames"></tr>
     </table>
+      <form class="" action="index.html" method="post">
+        <fieldset>
+          <fieldset>
+            <legend>Input Form</legend>
+            <label for="total_hours">Input store hours:</label>
+            <input type="text" name="total_hours" value="15" />
+            <label for="ID_string">Input store name:</label>
+            <input type="text" name="ID_string" />
+            <button type="submit" name="form_button">SUBMIT</button>
+          </fieldset>
+          <fieldset>
+            <label for="min_customer">Input minimum customers:</label>
+            <input type="text" name="min_customer" />
+            <label for="max_customer">Input maximum customers:</label>
+            <input type="text" name="max_customer" />
+            <label for="average_cookies">Input average cookies per sale:</label>
+            <input type="text" name="average_cookies" />
+          </fieldset>
+        </fieldset>
+      </form>
+
   </main>
   <script src="sales.js"></script>
 </body>
 </html>
+
+
+<!-- function StoreConstruct(minCustomer, maxCustomer, averageCookiesPerCustomer, totalHours, IDstring) { -->
